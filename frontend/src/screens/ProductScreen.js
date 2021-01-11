@@ -6,7 +6,6 @@ import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
 import Rating from '../components/Rating';
 import { PRODUCT_REVIEW_CREATE_RESET } from '../constants/productConstants';
-import Footer from '../components/Footer';
 
 export default function ProductScreen(props) {
   const dispatch = useDispatch();

@@ -99,6 +99,10 @@ button {
     display: none;
   }
 
+  .footerHeading{
+    max-width: 80%;
+  }
+
   .homepageFirstPiece{
     display: flex;
     flex-direction: column;
@@ -777,4 +781,9 @@ tbody > tr:nth-child(odd) {
 .takeawayDetails{
   display: flex;
   justify-content: space-evenly;
+}
+
+.covid{
+  background-color: yellow;
+  color: black;
 }

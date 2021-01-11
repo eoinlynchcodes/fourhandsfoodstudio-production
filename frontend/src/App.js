@@ -32,6 +32,8 @@ import Navigation from './components/Navigation';
 import Footer from './sectionsByEoin/Footer';
 import About from './sectionsByEoin/About';
 import Shop from './sectionsByEoin/Shop';
+import Blog from './sectionsByEoin/Blog';
+import Events from './sectionsByEoin/Events';
 
 function App() {
   
@@ -70,6 +72,8 @@ function App() {
             component={ProductEditScreen}
             exact
           ></Route>
+          <Route path="/blog" component={Blog} ></Route>
+          <Route path="/events" component={Events} ></Route>
           <Route path="/about" component={About} ></Route>
           <Route path="/shop" component={Shop}></Route>
           <Route path="/signin" component={SigninScreen}></Route>
