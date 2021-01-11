@@ -29,7 +29,9 @@ import LoadingBox from './components/LoadingBox';
 import MessageBox from './components/MessageBox';
 import MapScreen from './screens/MapScreen';
 import Navigation from './components/Navigation';
-
+import Footer from './sectionsByEoin/Footer';
+import About from './sectionsByEoin/About';
+import Shop from './sectionsByEoin/Shop';
 
 function App() {
   
@@ -68,6 +70,8 @@ function App() {
             component={ProductEditScreen}
             exact
           ></Route>
+          <Route path="/about" component={About} ></Route>
+          <Route path="/shop" component={Shop}></Route>
           <Route path="/signin" component={SigninScreen}></Route>
           <Route path="/register" component={RegisterScreen}></Route>
           <Route path="/shipping" component={ShippingAddressScreen}></Route>
@@ -131,6 +135,8 @@ function App() {
 
           <Route path="/" component={HomeScreen} exact></Route>
         </main>
+        <Footer/>
+
       </div>
     </BrowserRouter>
   );
