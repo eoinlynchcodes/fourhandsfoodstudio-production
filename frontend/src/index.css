@@ -80,6 +80,9 @@ button {
   flex-direction: row;
 }             
 
+.form{
+  max-width: 95%;
+}
 
 .theActualNav{
   background-color: white;
@@ -103,6 +106,14 @@ button {
     max-width: 80%;
   }
 
+  .flexTheHeader{
+    width: 100%;
+  }
+
+  .header{
+    width: 100%;
+  }
+
   .homepageFirstPiece{
     display: flex;
     flex-direction: column;
@@ -115,6 +126,11 @@ button {
 
   .paraforalignment{
     height: 60%;
+  }
+
+  .linksToFlex{
+    display: flex;
+    flex-direction: column;
   }
 
 }
@@ -149,6 +165,7 @@ button {
 
 .spacebetween{
   margin: 0rem 1rem;
+  color: black;
 }
 
 .navmenu{
@@ -326,13 +343,14 @@ a > .rating > span:last-child {
 }
 .sidebar {
   position: fixed;
+  display: none;
   transition: all 0.5s;
   transform: translateX(-30rem);
   width: 30rem;
   background-color: black;
   padding: 2rem;
   height: 100%;
-  max-width: 70%;
+  max-width: 50%;
 }
 
 .sidebar h3{
@@ -341,6 +359,7 @@ a > .rating > span:last-child {
 
 .sidebar.open {
   transform: translateX(0);
+  display: block;
 }
 
 .sidebar-close-button {
@@ -786,4 +805,18 @@ tbody > tr:nth-child(odd) {
 .covid{
   background-color: yellow;
   color: black;
+}
+
+.products{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.product{
+  border: 2px solid black;
+}
+
+img.small {
+  max-width: 5rem;
+  width: 100%;
 }

@@ -34,6 +34,7 @@ import About from './sectionsByEoin/About';
 import Shop from './sectionsByEoin/Shop';
 import Blog from './sectionsByEoin/Blog';
 import Events from './sectionsByEoin/Events';
+import Takeaway from './sectionsByEoin/Takeaway';
 
 function App() {
   
@@ -60,9 +61,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className="">
- 
         <Navigation/>
-
         <main>
           <Route path="/seller/:id" component={SellerScreen}></Route>
           <Route path="/cart/:id?" component={CartScreen}></Route>
@@ -72,6 +71,7 @@ function App() {
             component={ProductEditScreen}
             exact
           ></Route>
+          <Route path="/takeaway" component={Takeaway} ></Route>
           <Route path="/blog" component={Blog} ></Route>
           <Route path="/events" component={Events} ></Route>
           <Route path="/about" component={About} ></Route>

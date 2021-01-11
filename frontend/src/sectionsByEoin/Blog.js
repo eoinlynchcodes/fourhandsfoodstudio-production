@@ -4,7 +4,7 @@ function Blog(){
 
     return (
         <div>
-        <section className="homepagebox">
+        <section className="">
             <div className="coloredBox blue">
               <h2>Blog</h2>
             </div>

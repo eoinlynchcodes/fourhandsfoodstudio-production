@@ -28,10 +28,12 @@ function Shop(props) {
   };
 
   return (
-    <section className="homepageContainer">
+    <section className="aboutContainer">
       <div className="vl"></div>
-      <div className="containerByEoin">
-        <section className="products-section">
+      <div className="">
+      <div className="coloredBox violet">
+          <h2>Products</h2>
+        </div>
           <div className="product-padding-section">
             {/* <h1 id="products">Products</h1> */}
             <p>More products will be available here soon.</p>
@@ -40,14 +42,14 @@ function Shop(props) {
             ) : error ? (
               <div>{error}</div>
             ) : (
-              <ul id="products" className="products">
+              <div id="products" className="products">
                 {products.map((product) => (
-                  <li key={product._id}>
+                  <div key={product._id}>
                     {product ? (
                       <div className="product">
                         <Link to={"/product/" + product._id}>
                           <img
-                            className="product-image"
+                            className="small"
                             src={product.image}
                             alt="product"
                           />
@@ -92,14 +94,14 @@ function Shop(props) {
                         </h2>
                       </div>
                     )}
-                  </li>
+                  </div>
                 ))}
-              </ul>
+              </div>
             )}
           </div>
-        </section>
 
-
+          <br/>
+          <br/>
 
         <section id="stockists" className="stockists">
           <div className="coloredBox violet">

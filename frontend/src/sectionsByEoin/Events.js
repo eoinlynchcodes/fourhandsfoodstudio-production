@@ -29,12 +29,11 @@ function Events() {
             we are looking forward to feeding you again in the future!
             <br />
             <br />
-            <b>Rose and Margaux</b>
+            <br />
+            <b>Rose &amp; Margaux</b>
           </p>
         </div>
-
         <br />
-        <hr />
       </div>
       <div className="vl"></div>
     </section>

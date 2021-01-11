@@ -47,6 +47,11 @@ html {
     overflow: hidden;
   }
 
+  .linksToFlex{
+    display: flex;
+    flex-direction: column;
+  }
+
   .homeImages{
     height: 100%;
     overflow: hidden;
@@ -235,7 +240,6 @@ html {
 
 .linksToFlex{
   display: flex;
-  
 }
 
 
