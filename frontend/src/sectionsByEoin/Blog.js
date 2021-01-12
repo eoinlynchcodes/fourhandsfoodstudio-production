@@ -19,11 +19,9 @@ function Blog(){
                 data-readmore="Read the rest..."
                 data-buttonclass="btn btn-primary"
                 data-offset="-100"
-                
               ></div>
             </div>
           </section>
-
         </div>
     );
 }
