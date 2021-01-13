@@ -70,13 +70,15 @@ export default function ProductListScreen(props) {
   };
   return (
     <div>
-      <div className="row">
+      <div className="coloredBox violet">
         <h1>Products</h1>
-        <button type="button" className="primary" onClick={createHandler}>
+      </div><br/>
+      <div className="coloredBox">
+      <button type="button" className="primary" onClick={createHandler}>
           Create Product
         </button>
       </div>
-
+      <br/>
       {loadingDelete && <LoadingBox></LoadingBox>}
       {errorDelete && <MessageBox variant="danger">{errorDelete}</MessageBox>}
 
@@ -128,18 +130,20 @@ export default function ProductListScreen(props) {
                 </tr>
               ))}
             </tbody>
-          </table>
-          <div className="row center pagination">
+          </table><br/>
+          <div className="coloredBox">
             {[...Array(pages).keys()].map((x) => (
               <Link
-                className={x + 1 === page ? 'active' : ''}
+                className=  {x + 1 === page ? 'active' : ''}
                 key={x + 1}
                 to={`/productlist/pageNumber/${x + 1}`}
               >
+                <br/>
                 {x + 1}
               </Link>
             ))}
           </div>
+          <br/>
         </>
       )}
     </div>

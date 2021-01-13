@@ -1,8 +1,8 @@
 {
-  "name": "timberandbarkmulch",
+  "name": "fourhandsfoodstudio",
   "type": "module",
   "version": "1.0.0",
-  "description": "A website to buy firewood and other materials.",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "build": "cd frontend && npm install && npm run build",

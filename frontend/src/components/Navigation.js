@@ -32,29 +32,6 @@ function Navigation(props) {
     <div>
       <header className="flexTheHeader">
         <div className="navmenu">
-          {/* {userInfo ? (
-            <Link className="spacebetween" to="/profile">
-              {userInfo.name}
-            </Link>
-          ) : null} */}
-          {/* {userInfo && userInfo.isAdmin && (
-            <div className="dropdown">
-              <a href="#">Admin</a>
-              <ul className="dropdown-content">
-                <li>
-                  <Link className="spacebetween" to="/orderlist">
-                    Orders
-                  </Link>
-                  <Link className="spacebetween" to="/productlist">
-                    Products
-                  </Link>
-                  <Link className="spacebetween" to="/edittakeaway">
-                    Takeaway
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          )} */}
           {userInfo ? (
             <Link className="spacebetween" to="/orderlist">
               Orders
@@ -93,16 +70,14 @@ function Navigation(props) {
             </Link>
           </div>
 
-          <div className="header-links">
             <Link className="" to="/cart/:id?">
-              <h5>
-                CART
+              <h5 className="black-text">
+                Cart
                 {cart.cartItems.length ? (
-                  <h5>({cart.cartItems.length})</h5>
+                  <h5> ( {cart.cartItems.length} ) </h5>
                 ) : null}{" "}
               </h5>
             </Link>
-          </div>
         </div>
         <hr />
 
@@ -140,7 +115,7 @@ function Navigation(props) {
             <Link to="/about">About</Link>
             <Link to="/shop">Shop</Link>
             <Link to="/takeaway">Takeaway</Link>
-            <Link to="/blog">Recipes</Link>
+            <Link to="/blog">Blog</Link>
             <Link to="/events">Events</Link>
           </li>
         </ul>

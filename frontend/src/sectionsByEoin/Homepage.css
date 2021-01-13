@@ -47,6 +47,15 @@ html {
     overflow: hidden;
   }
 
+  .navmenu{
+    max-width: 100%;
+    display: flex;
+    justify-items: space-evenly;
+  }
+  .navmenu a{
+    font-size: .5rem;
+  }
+
   .linksToFlex{
     display: flex;
     flex-direction: column;
@@ -165,7 +174,7 @@ html {
   .homepageContainer {
     display: flex;
     flex-direction: column-reverse;
-    width: 80%;
+    width: 90%;
   }
 
   #greenButton{
@@ -222,7 +231,6 @@ html {
 
   header{
     display: flex;
-    max-width: 80%;
     margin: 0 auto;  
   }
 

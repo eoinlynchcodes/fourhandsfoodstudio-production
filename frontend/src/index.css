@@ -102,6 +102,32 @@ button {
     display: none;
   }
 
+  .flexTheHeader{
+    width: 100%;
+  }
+
+  .navmenu{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .navmenu a{
+    font-size: 1rem;
+  }
+
+  .header{
+    max-width: 95%;
+  }
+
+  .form-container{
+    max-width: 90%;
+  }
+
+  .form{
+    max-width: 90%;
+  }
+
   .footerHeading{
     max-width: 80%;
   }
@@ -225,12 +251,16 @@ a:hover {
     font-size: 2em;
     margin: 0 auto;
   }
+
+  .violet h3{
+    font-size: 1.5rem;
+  }
   
 }
 
 @media only screen and (max-width: 768px){
   .fourHandsHeadingText{
-    font-size: 1.3em;
+    font-size: 1.7em;
     margin: 0 auto;
     flex-direction: row;
   }
@@ -255,7 +285,6 @@ a:hover {
   padding: 2em 2em;
   margin: 0 auto;
 }
-
 
 .product {
   padding: 2em 0em; 
@@ -397,7 +426,7 @@ a > .rating > span:last-child {
 }
 
 .details-image img {
-  width: 40%;
+  width: 50%;
   height: auto;
   justify-items: center;
 }
@@ -478,6 +507,7 @@ a > .rating > span:last-child {
   padding: 0;
   list-style-type: none;
   padding: 1rem;
+  width: 90%;
 }
 .cart-list-container li {
   display: flex;
@@ -516,7 +546,7 @@ a > .rating > span:last-child {
 
 .cart-price {
   flex: 1 1;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   text-align: right;
 }
 
@@ -735,7 +765,6 @@ tbody > tr:nth-child(odd) {
   .burgerMenu{
     display: flex;
   }
-
 }
 
 .barrioFont{
@@ -819,4 +848,24 @@ tbody > tr:nth-child(odd) {
 img.small {
   max-width: 5rem;
   width: 100%;
+}
+
+.checkout{
+  background-color: green;
+  padding: 1rem 2rem;
+  display: inline;
+  width: 100%;
+  color: white;
+}
+
+.whiteText{
+  color: white;
+}
+
+.black-text{
+  color: black;
+}
+
+.qtywidth{
+  width: 2rem;
 }

@@ -42,14 +42,14 @@ function Shop(props) {
             ) : error ? (
               <div>{error}</div>
             ) : (
-              <div id="products" className="products">
+              <div id="products" className="">
                 {products.map((product) => (
                   <div key={product._id}>
                     {product ? (
-                      <div className="product">
+                      <div className="">
                         <Link to={"/product/" + product._id}>
                           <img
-                            className="small"
+                            className="product-image"
                             src={product.image}
                             alt="product"
                           />
