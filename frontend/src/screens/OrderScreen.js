@@ -79,25 +79,28 @@ export default function OrderScreen(props) {
   ) : (
     <div>
       <div className="order-screen">
-        <ul>
+        <ul className="centerThisUL">
           <li>
             <div className="card card-body">
-              <ul className="columnThis">
-                <li>
-                  <h2>Order Summary</h2>
-                </li>
+              <h2 className="violet">Order Summary</h2>
 
+              <ul className="centerThisSecondUL">
+              <li>
+                  <h3 className="violet">Pay Here:</h3>
+                </li>
                 <li>
                   <div className="row">
                     <div>Items:</div>
+                    {console.log(order)}
                     <div>€{order.itemsPrice.toFixed(2)}</div>
                   </div>
                 </li>
+                <br/>
 
                 <li>
                   <div className="row">
                     <div>
-                      <strong> Order Total</strong>
+                      <strong>Order Total:</strong>
                     </div>
                     <div>
                       <strong>€{order.totalPrice.toFixed(2)}</strong>
@@ -114,19 +117,46 @@ export default function OrderScreen(props) {
                           <MessageBox variant="danger">{errorPay}</MessageBox>
                         )}
                         {loadingPay && <LoadingBox></LoadingBox>}
-                        <br/>
+                        <br />
                         <PayPalButton
                           amount={order.totalPrice}
                           options={{
-                            clientId: "############"
-                            ,currency:"EUR"
-                          }}              
-                          onSuccess={successPaymentHandler}  
+                            clientId: "############",
+                            currency: "EUR",
+                          }}
+                          onSuccess={successPaymentHandler}
                         ></PayPalButton>
                       </>
                     )}
                   </li>
                 )}
+
+                <li>
+                  {order.orderItems.map((item) => {
+                    return (
+                      <ul className="cart-list-container">
+                        <hr/>
+                        <li>
+                          <div className="cart-image">
+                            <img src={item.image} alt="product" />
+                          </div>
+                          <div className="cart-name">
+                            <div>
+                              <Link
+                                to={"/product/" + item.product}
+                                className="black-text"
+                              >
+                                {item.name}
+                              </Link>
+                            </div>
+                            <p className="">€{item.price}</p>
+                            <p>{item.qty}</p>
+                          </div>
+                        </li>
+                      </ul>
+                    );
+                  })}
+                </li>
                 {userInfo.isAdmin && order.isPaid && !order.isDelivered && (
                   <li>
                     {loadingDeliver && <LoadingBox></LoadingBox>}
@@ -145,9 +175,17 @@ export default function OrderScreen(props) {
               </ul>
             </div>
 
-            <div className="card card-body">
+            <div className="centerThisSecondUL">
               <h2>Delivery Address:</h2>
-              <p><div>{order.shippingAddress.fullName}, <br/> {order.shippingAddress.address},<br/>{order.shippingAddress.city},<br/>{order.shippingAddress.country},<br/> {order.shippingAddress.postalCode} <br/></div></p>
+              <p>
+                <div>
+                  {order.shippingAddress.fullName}, <br />{" "}
+                  {order.shippingAddress.address},<br />
+                  {order.shippingAddress.city},<br />
+                  {order.shippingAddress.country},<br />{" "}
+                  {order.shippingAddress.postalCode} <br />
+                </div>
+              </p>
               {/* {order.isDelivered ? (
                 <MessageBox variant="success">
                   Delivered at {order.deliveredAt}

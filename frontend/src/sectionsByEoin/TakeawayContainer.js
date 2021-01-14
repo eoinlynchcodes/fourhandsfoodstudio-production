@@ -6,13 +6,14 @@ import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 
 function TakeawayContainer(props) {
-  const [takeawayData, setTakeawayData] = useState([]);
+  const [takeawayDetails, setTakeawayDetails] = useState([]);
   const history = useHistory();
 
   useEffect(() => {
-    axios.get("/api/products/")
-      .then(response => {
-        setTakeawayData(response.data.products);
+    axios
+      .get("/api/takeaway/")
+      .then((response) => {
+        setTakeawayDetails(response.data);
       })
       .catch((error) => {
         return error.message;
@@ -25,10 +26,26 @@ function TakeawayContainer(props) {
 
   return (
     <div className="menuTakeawaySection">
-      <h2>This week's takeaway menu:</h2>
+      <div>
+        <h2>This week's takeaway menu:</h2>
+
+        <h5>{console.log(takeawayDetails)}</h5>
+
+        <p>
+          <u>Collection Date:</u>
+          <br /> {takeawayDetails.collectionDate}
+        </p>
+
+        <p>
+          <u>Collection Point:</u>
+          <br /> {takeawayDetails.pickupPoints}
+        </p>
+
+        <p>{takeawayDetails.otherinfo}</p>
+      </div>
 
       {/* For Details */}
-      {takeawayData.map((takeaway) => {
+      {/* {takeawayData.map((takeaway) => {
         console.log(takeaway);
         if (takeaway.isTakeaway === true) {
           return (
@@ -44,25 +61,26 @@ function TakeawayContainer(props) {
                   <p>
                     <u className="yellowText">Pick-up points:</u>
                     <br /> {takeaway.pickupPoints}
-                    <br/><br/>
+                    <br />
+                    <br />
                   </p>
                 ) : null}
               </div>
               {takeaway.otherinfo ? (
-                  <p>
-                    <u className="yellowText">Other Information:</u>
-                    <br /> {takeaway.otherinfo}
-                  </p>
-                ) : null}
+                <p>
+                  <u className="yellowText">Other Information:</u>
+                  <br /> {takeaway.otherinfo}
+                </p>
+              ) : null}
             </div>
           );
         } else {
           return null;
         }
-      })}
+      })} */}
 
       {/* For Menu */}
-      {takeawayData.map((takeaway) => {
+      {/* {takeawayData.map((takeaway) => {
         if (takeaway.isTakeaway === true) {
           return (
             <div>
@@ -102,7 +120,7 @@ function TakeawayContainer(props) {
         } else {
           return null;
         }
-      })}
+      })} */}
     </div>
   );
 }

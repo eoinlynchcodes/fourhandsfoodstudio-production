@@ -235,9 +235,6 @@ a:hover {
   margin: 0 auto;
 }
 
-.productPlacer{
-}
-
 @media only screen and (max-width: 768px){
   .productPlacer{
     margin: auto 0;
@@ -245,6 +242,13 @@ a:hover {
     justify-content: center;
     align-items: center;
     padding: 0em 0em;
+  }
+
+  .details-info{
+    border: 1px solid black;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
   }
 
   .fourHandsHeadingText{
@@ -754,9 +758,6 @@ tbody > tr:nth-child(odd) {
   display: flex;
 }
 
-.trolley{
-}
-
 .burgerMenu{
   display: none;
 }
@@ -765,6 +766,7 @@ tbody > tr:nth-child(odd) {
   .burgerMenu{
     display: flex;
   }
+
 }
 
 .barrioFont{
@@ -869,3 +871,50 @@ img.small {
 .qtywidth{
   width: 2rem;
 }
+
+
+.product-padding-section{
+  border: 1px solid black;
+  margin: 2rem auto;
+}
+
+.buttonDivHomepageProduct{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.product-data{
+  padding: 1rem 2rem;
+}
+
+.details-info{
+  border: 1px solid black;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+}
+
+.data-on-product{
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.order{}
+
+.centerThisUL{
+  width: 90%;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.centerThisSecondUL{
+  display: flex;
+  flex-direction: column;
+  padding: 3rem 3rem;
+  border: 1px solid grey;
+  margin: 2rem auto;
+}
+

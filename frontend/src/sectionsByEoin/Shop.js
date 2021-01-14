@@ -31,29 +31,30 @@ function Shop(props) {
     <section className="aboutContainer">
       <div className="vl"></div>
       <div className="">
-      <div className="coloredBox violet">
+        <div className="coloredBox violet">
           <h2>Products</h2>
         </div>
-          <div className="product-padding-section">
-            {/* <h1 id="products">Products</h1> */}
-            <p>More products will be available here soon.</p>
-            {loading ? (
-              <div>Loading...</div>
-            ) : error ? (
-              <div>{error}</div>
-            ) : (
-              <div id="products" className="">
-                {products.map((product) => (
-                  <div key={product._id}>
-                    {product ? (
-                      <div className="">
-                        <Link to={"/product/" + product._id}>
-                          <img
-                            className="product-image"
-                            src={product.image}
-                            alt="product"
-                          />
-                        </Link>
+        <br />
+        <div className="">
+          {/* <h1 id="products">Products</h1> */}
+          {loading ? (
+            <div>Loading...</div>
+          ) : error ? (
+            <div>{error}</div>
+          ) : (
+            <div id="products" className="">
+              {products.map((product) => (
+                <div key={product._id}>
+                  {product ? (
+                    <div className="product-padding-section">
+                      <Link to={"/product/" + product._id}>
+                        <img
+                          className="product-image"
+                          src={product.image}
+                          alt="product"
+                        />
+                      </Link>
+                      <div className="product-data">
                         <div className="product-name pad">
                           <Link
                             className="product-actual-name"
@@ -79,7 +80,7 @@ function Shop(props) {
                               Add to Cart
                             </div>
                           ) : (
-                            <div className="button primary">
+                            <div className="">
                               <a href="#contact" className="whitetext">
                                 Email Us For Orders
                               </a>
@@ -87,47 +88,48 @@ function Shop(props) {
                           )}
                         </div>
                       </div>
-                    ) : (
-                      <div>
-                        <h2>
-                          Products will soon be available for purchase here.
-                        </h2>
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
+                    </div>
+                  ) : (
+                    <div>
+                      <h2>
+                        Products will soon be available for purchase here.
+                      </h2>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
 
-          <br/>
-          <br/>
+        <br />
+        <br />
 
         <section id="stockists" className="stockists">
           <div className="coloredBox violet">
-                <h3>Stockists</h3>
-              </div>
-              <br/>
-           <table className="table">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Address</th>
-            </tr>
-          </thead>
-          <tbody>
+            <h3>Stockists</h3>
+          </div>
+          <br />
+          <table className="table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Address</th>
+              </tr>
+            </thead>
+            <tbody>
               <tr>
                 <td>Foxes Fruit and Veg</td>
                 <td>Mullingar, Westmeath</td>
               </tr>
               <tr>
-               <td>Lowe and Co.</td>
-               <td>Athlone, Westmeath</td>
-              </tr> 
+                <td>Lowe and Co.</td>
+                <td>Athlone, Westmeath</td>
+              </tr>
               <tr>
                 <td>Marlowe and Co</td>
-               <td>Dublin</td>
-              </tr> 
+                <td>Dublin</td>
+              </tr>
               <tr>
                 <td>Lennox Street Grocers</td>
                 <td>Howth Dublin</td>
@@ -148,10 +150,10 @@ function Shop(props) {
                 <td>The Fumbally Shop</td>
                 <td>Dublin</td>
               </tr>
-          </tbody>
-        </table>
-        <br/>
-        <br/>
+            </tbody>
+          </table>
+          <br />
+          <br />
         </section>
       </div>
       <div className="vl"></div>

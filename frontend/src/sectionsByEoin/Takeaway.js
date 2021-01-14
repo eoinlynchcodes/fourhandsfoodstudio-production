@@ -36,7 +36,7 @@ function Takeaway() {
           <TakeawayContainer />
           <br/>
           <Link to="/shop"><div className="ProductsFromMenu">
-            Order other products for collection with takeaway
+            Shop Products
           </div></Link>
         </div>
         </div>

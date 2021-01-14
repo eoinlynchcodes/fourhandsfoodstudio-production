@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { saveShippingAddress } from "../actions/cartActions";
-import CheckoutSteps from "../components/CheckoutSteps";
 import { savePaymentMethod } from "../actions/cartActions";
 
 export default function ShippingAddressScreen(props) {
@@ -17,33 +16,29 @@ export default function ShippingAddressScreen(props) {
     props.history.push("/signin");
   }
 
-  const [paymentMethod, setPaymentMethod] = useState('PayPal');
+  const [paymentMethod, setPaymentMethod] = useState("PayPal");
   const [fullName, setFullName] = useState(shippingAddress.fullName);
   const [address, setAddress] = useState(shippingAddress.address);
   const [city, setCity] = useState(shippingAddress.city);
   const [postalCode, setPostalCode] = useState(shippingAddress.postalCode);
   const [country, setCountry] = useState(shippingAddress.country);
-  const [instructions, setInstructions] = useState(
-    shippingAddress.instructions
-  );
   const dispatch = useDispatch();
   const submitHandler = (e) => {
     e.preventDefault();
-      dispatch(saveShippingAddress({
-          fullName,
-          address,
-          city,
-          postalCode,
-          country,
-          instructions
-        }));
-      dispatch(savePaymentMethod(paymentMethod));
-      props.history.push('/placeorder');
+    dispatch(
+      saveShippingAddress({
+        fullName,
+        address,
+        city,
+        postalCode,
+        country,
+      })
+    );
+    dispatch(savePaymentMethod(paymentMethod));
+    props.history.push("/placeorder");
   };
 
-
   return (
-
     <div>
       {/* <CheckoutSteps step1 step2></CheckoutSteps> */}
       <div className="form">
@@ -110,20 +105,6 @@ export default function ShippingAddressScreen(props) {
                 value={country}
                 placeholder="Note: We only deliver in Westmeath."
                 onChange={(e) => setCountry(e.target.value)}
-              ></input>
-            </li>
-
-            <li>
-              <label htmlFor="country">
-                Instructions for Delivery Driver (Optional):
-              </label>
-              <input
-                type="text"
-                name="instructions"
-                id=""
-                placeholder=""
-            
-                onChange={(e) => setInstructions(e.target.value)}
               ></input>
             </li>
 
