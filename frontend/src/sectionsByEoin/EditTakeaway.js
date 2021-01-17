@@ -16,9 +16,9 @@ function EditTakeaway(props) {
   // For handling main courses.
   const [main, setMain] = useState({
     isTakeaway: true,
-    mainCourse: true,
-    collectionDate: "",
-    price: "",
+    isMainCourse: true,
+    countInStock: null,
+    price: null,
     mainTitle: "",
     mainItems: "",
   });
@@ -31,9 +31,10 @@ function EditTakeaway(props) {
   };
 
   const handleSubmitMain = (event) => {
+    debugger
+    console.log(main);
     event.preventDefault();
-    axios
-      .post("/api/products/", main)
+    axios.post("/api/products/", main)
       .then((response) => {
         setMain(response.data);
         window.location.reload();
@@ -47,12 +48,11 @@ function EditTakeaway(props) {
 
   const [course, setCourse] = useState({
     isTakeaway: true,
-    mainCourse: false,
-    collectionDate: "",
-    countInStock: "",
-    price: "null",
-    mainTitle: "",
-    mainItems: "",
+    isMainCourse: false,
+    countInStock: null,
+    price: null,
+    takeTitle: "",
+    takeItems: "",
   });
 
   const handleCourseChange = (event) => {
@@ -64,8 +64,7 @@ function EditTakeaway(props) {
 
   const handleSubmitCourses = (event) => {
     event.preventDefault();
-    axios
-      .post("/api/products/", course)
+    axios.post("/api/products/", course)
       .then((response) => {
         setCourse(response.data);
         window.location.reload();
@@ -77,38 +76,12 @@ function EditTakeaway(props) {
 
   // For Handling Details - Date, Pickup Location, etc.
 
-  // const [details, setDetails] = useState({
-  //   collectionDate: "",
-  //   pickupPoints: "",
-  //   otherinfo: "",
-  // });
-
-  // const handleChangeDetails = (event) => {
-  //   setDetails({
-  //     ...details,
-  //     [event.target.name]: event.target.value,
-  //   });
-  // };
-
-  // const handleSubmitDetails = (event) => {
-  //   event.preventDefault();
-  //   axios
-  //     .post("/api/products/", details)
-  //     .then((response) => {
-  //       setDetails(response.data);
-  //       window.location.reload();
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-  // };
-
   // Get takeaways.
   useEffect(() => {
-    axios
-      .get("/api/products/")
+    axios.get("/api/products/all")
       .then((response) => {
-        setTakeawayData(response.data.products);
+        console.log(response.data);
+        setTakeawayData(response.data);
       })
       .catch((error) => {
         return error.message;
@@ -246,40 +219,6 @@ function EditTakeaway(props) {
           <button type="submit">Add</button>
           <br />
         </form>
-
-        {/* <form
-          onSubmit={(event) => handleSubmitDetails(event)}
-          className="editTakeawayForm"
-        >
-          <h2 className="violet">Add Details</h2>
-          <label>Collection Date:</label>
-          <input
-            name="collectionDate"
-            placeholder="Date:"
-            onChange={(event) => handleChangeDetails(event)}
-          />
-          <br />
-
-          <label>Pick-Up Points:</label>
-          <textarea
-            name="pickupPoints"
-            placeholder="Where can it be collected?"
-            rows="6"
-            onChange={(event) => handleChangeDetails(event)}
-          />
-          <br/>
-
-          <label>Other Information to Add:</label>
-          <textarea
-            name="otherinfo"
-            placeholder="Any other information to add:"
-            rows="8"
-            onChange={(event) => handleChangeDetails(event)}
-          />
-          <br />
-          <button type="submit">Add Details</button>
-          <br />
-        </form> */}
         <DetailsEditor/>
       </div>
     </section>

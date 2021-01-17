@@ -88,13 +88,6 @@ export default function OrderScreen(props) {
               <li>
                   <h3 className="violet">Pay Here:</h3>
                 </li>
-                <li>
-                  <div className="row">
-                    <div>Items:</div>
-                    {console.log(order)}
-                    <div>€{order.itemsPrice.toFixed(2)}</div>
-                  </div>
-                </li>
                 <br/>
 
                 <li>
@@ -146,11 +139,10 @@ export default function OrderScreen(props) {
                                 to={"/product/" + item.product}
                                 className="black-text"
                               >
-                                {item.name}
+                                (x{item.qty}) {item.name}
                               </Link>
                             </div>
                             <p className="">€{item.price}</p>
-                            <p>{item.qty}</p>
                           </div>
                         </li>
                       </ul>

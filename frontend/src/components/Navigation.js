@@ -72,10 +72,9 @@ function Navigation(props) {
 
             <Link className="" to="/cart/:id?">
               <h5 className="black-text">
-                Cart
                 {cart.cartItems.length ? (
-                  <h5> ( {cart.cartItems.length} ) </h5>
-                ) : null}{" "}
+                  <h5>CART ( {cart.cartItems.length} ) </h5>
+                ) : 'CART' }{" "}
               </h5>
             </Link>
         </div>

@@ -12,20 +12,23 @@ function Footer() {
   return (
     <footer className="footer">
       <nav className="footerNavigation">
-        <a href="/shop">
-          <p>Shop</p>
+        <a href="/">
+          <p>Home</p>
         </a>
         <a href="/about">
           <p>About</p>
         </a>
-        <a href="contact">
-          <p>Contact</p>
-        </a>
-        <a href="/retailers">
-          <p>Retailers</p>
+        <a href="/shop">
+          <p>Products</p>
         </a>
         <a href="/takeaway">
-          <p>Takeaways</p>
+          <p>Takeaway</p>
+        </a>
+        <a href="/blog">
+          <p>Blog</p>
+        </a>
+        <a href="/events"> 
+          <p>Events</p>
         </a>
       </nav>
 

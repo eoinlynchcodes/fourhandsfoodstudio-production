@@ -15,7 +15,7 @@ import {
 import Navigation from '../components/Navigation.js';
 
 export default function ProductListScreen(props) {
-  const { pageNumber = 1 } = useParams();
+  const { pageNumber = null } = useParams();
 
   const sellerMode = props.match.path.indexOf('/seller') >= 0;
   const productList = useSelector((state) => state.productList);
@@ -97,7 +97,6 @@ export default function ProductListScreen(props) {
                 <th>NAME</th>
                 <th>PRICE</th>
                 <th>CATEGORY</th>
-                <th>BRAND</th>
                 <th>ACTIONS</th>
               </tr>
             </thead>
@@ -108,7 +107,6 @@ export default function ProductListScreen(props) {
                   <td>{product.name}</td>
                   <td>{product.price}</td>
                   <td>{product.category}</td>
-                  <td>{product.brand}</td>
                   <td>
                     <button
                       type="button"
@@ -131,7 +129,7 @@ export default function ProductListScreen(props) {
               ))}
             </tbody>
           </table><br/>
-          <div className="coloredBox">
+          {/* <div className="coloredBox">
             {[...Array(pages).keys()].map((x) => (
               <Link
                 className=  {x + 1 === page ? 'active' : ''}
@@ -142,7 +140,7 @@ export default function ProductListScreen(props) {
                 {x + 1}
               </Link>
             ))}
-          </div>
+          </div> */}
           <br/>
         </>
       )}

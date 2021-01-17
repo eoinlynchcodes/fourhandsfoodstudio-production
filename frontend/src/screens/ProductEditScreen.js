@@ -13,7 +13,6 @@ export default function ProductEditScreen(props) {
   const [image, setImage] = useState('');
   const [category, setCategory] = useState('');
   const [countInStock, setCountInStock] = useState('');
-  const [brand, setBrand] = useState('');
   const [description, setDescription] = useState('');
 
   const productDetails = useSelector((state) => state.productDetails);
@@ -40,7 +39,6 @@ export default function ProductEditScreen(props) {
       setImage(product.image);
       setCategory(product.category);
       setCountInStock(product.countInStock);
-      setBrand(product.brand);
       setDescription(product.description);
     }
   }, [product, dispatch, productId, successUpdate, props.history]);
@@ -54,7 +52,6 @@ export default function ProductEditScreen(props) {
         price,
         image,
         category,
-        brand,
         countInStock,
         description,
       })
@@ -162,18 +159,6 @@ export default function ProductEditScreen(props) {
                 onChange={(e) => setCategory(e.target.value)}
               ></input>
             </li>              <br/>
-
-            {/* <li>
-              <label htmlFor="brand">Brand</label>
-              <br/>
-              <input
-                id="brand"
-                type="text"
-                placeholder="Enter brand"
-                value={brand}
-                onChange={(e) => setBrand(e.target.value)}
-              ></input>
-            </li>              <br/> */}
 
             <li>
               <label htmlFor="countInStock">Count In Stock</label>
