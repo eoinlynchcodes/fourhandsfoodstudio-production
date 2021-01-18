@@ -1,23 +1,22 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { Link, useParams } from 'react-router-dom';
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useParams } from "react-router-dom";
 import {
   createProduct,
   deleteProduct,
   listProducts,
-} from '../actions/productActions';
-import LoadingBox from '../components/LoadingBox';
-import MessageBox from '../components/MessageBox';
+} from "../actions/productActions";
+import LoadingBox from "../components/LoadingBox";
+import MessageBox from "../components/MessageBox";
 import {
   PRODUCT_CREATE_RESET,
   PRODUCT_DELETE_RESET,
-} from '../constants/productConstants';
-import Navigation from '../components/Navigation.js';
+} from "../constants/productConstants";
 
 export default function ProductListScreen(props) {
   const { pageNumber = null } = useParams();
 
-  const sellerMode = props.match.path.indexOf('/seller') >= 0;
+  const sellerMode = props.match.path.indexOf("/seller") >= 0;
   const productList = useSelector((state) => state.productList);
   const { loading, error, products, page, pages } = productList;
 
@@ -47,7 +46,7 @@ export default function ProductListScreen(props) {
       dispatch({ type: PRODUCT_DELETE_RESET });
     }
     dispatch(
-      listProducts({ seller: sellerMode ? userInfo._id : '', pageNumber })
+      listProducts({ seller: sellerMode ? userInfo._id : "", pageNumber })
     );
   }, [
     createdProduct,
@@ -61,7 +60,7 @@ export default function ProductListScreen(props) {
   ]);
 
   const deleteHandler = (product) => {
-    if (window.confirm('Are you sure to delete?')) {
+    if (window.confirm("Are you sure to delete?")) {
       dispatch(deleteProduct(product._id));
     }
   };
@@ -72,13 +71,14 @@ export default function ProductListScreen(props) {
     <div>
       <div className="coloredBox violet">
         <h1>Products</h1>
-      </div><br/>
+      </div>
+      <br />
       <div className="coloredBox">
-      <button type="button" className="primary" onClick={createHandler}>
+        <button type="button" className="primary" onClick={createHandler}>
           Create Product
         </button>
       </div>
-      <br/>
+      <br />
       {loadingDelete && <LoadingBox></LoadingBox>}
       {errorDelete && <MessageBox variant="danger">{errorDelete}</MessageBox>}
 
@@ -128,7 +128,8 @@ export default function ProductListScreen(props) {
                 </tr>
               ))}
             </tbody>
-          </table><br/>
+          </table>
+          <br />
           {/* <div className="coloredBox">
             {[...Array(pages).keys()].map((x) => (
               <Link
@@ -141,7 +142,7 @@ export default function ProductListScreen(props) {
               </Link>
             ))}
           </div> */}
-          <br/>
+          <br />
         </>
       )}
     </div>

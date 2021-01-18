@@ -1,13 +1,9 @@
 import React from "react";
-import { BrowserRouter, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import "../App.css";
 import { useSelector } from "react-redux";
-// import shoppingcart from "../imagesByEoin/shopping-cart.png";
-// import ShoppingCartSharpIcon from "@material-ui/icons/ShoppingCartSharp";
-import SvgIcon from "@material-ui/icons/ShoppingCartSharp";
 import { signout } from "../actions/userActions";
-import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 
 function Navigation(props) {
   const userSignin = useSelector((state) => state.userSignin);

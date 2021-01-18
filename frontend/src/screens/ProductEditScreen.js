@@ -42,6 +42,7 @@ export default function ProductEditScreen(props) {
       setDescription(product.description);
     }
   }, [product, dispatch, productId, successUpdate, props.history]);
+
   const submitHandler = (e) => {
     e.preventDefault();
     // TODO: dispatch update product
@@ -56,6 +57,7 @@ export default function ProductEditScreen(props) {
         description,
       })
     );
+    window.location.reload();
   };
   const [loadingUpload, setLoadingUpload] = useState(false);
   const [errorUpload, setErrorUpload] = useState('');

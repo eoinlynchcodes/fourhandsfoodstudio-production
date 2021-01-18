@@ -13,7 +13,6 @@ function DetailsEditor() {
   useEffect(() => {
     axios.get("/api/takeaway/")
       .then((response) => {
-        console.log(response.data);
         setDetailsOnline(response.data);
       })
       .catch((error) => {

@@ -146,6 +146,10 @@ productRouter.put(
       product.brand = req.body.brand;
       product.countInStock = req.body.countInStock;
       product.description = req.body.description;
+      product.isMainCourse = req.body.isMainCourse;
+      product.isTakeaway = req.body.isTakeaway;
+      product.mainItems = req.body.mainItems;
+      product.mainTitle = req.body.mainTitle;
       const updatedProduct = await product.save();
       res.send({ message: "Product Updated", product: updatedProduct });
     } else {

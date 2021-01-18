@@ -9,11 +9,13 @@ function TakeawayContainer(props) {
   const [takeawayDetails, setTakeawayDetails] = useState([]);
   const history = useHistory();
 
+  const [takeawayProduct, setTakeawayProduct] = useState([]);
+
   useEffect(() => {
     axios
-      .get("/api/takeaway/")
-      .then((response) => {
-        setTakeawayDetails(response.data);
+      .get("/api/products/")
+      .then(response => {
+        setTakeawayProduct(response.data.products);
       })
       .catch((error) => {
         return error.message;
@@ -28,9 +30,6 @@ function TakeawayContainer(props) {
     <div className="menuTakeawaySection">
       <div>
         <h2>This week's takeaway menu:</h2>
-
-        <h5>{console.log(takeawayDetails)}</h5>
-
         <p>
           <u>Collection Date:</u>
           <br /> {takeawayDetails.collectionDate}
@@ -80,7 +79,7 @@ function TakeawayContainer(props) {
       })} */}
 
       {/* For Menu */}
-      {/* {takeawayData.map((takeaway) => {
+      {takeawayProduct.map((takeaway) => {
         if (takeaway.isTakeaway === true) {
           return (
             <div>
@@ -120,7 +119,7 @@ function TakeawayContainer(props) {
         } else {
           return null;
         }
-      })} */}
+      })}
     </div>
   );
 }

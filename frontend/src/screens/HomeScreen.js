@@ -1,17 +1,9 @@
 import React, { useEffect } from "react";
 import { useHistory } from 'react-router-dom';
-// import "react-responsive-carousel/lib/styles/carousel.min.css";
-// import { Carousel } from "react-responsive-carousel";
-import Product from "../components/Product";
-import LoadingBox from "../components/LoadingBox";
-import MessageBox from "../components/MessageBox";
 import '../sectionsByEoin/Homepage.css';
-
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { listProducts } from "../actions/productActions";
 import { listTopSellers } from "../actions/userActions";
-import { Link } from "react-router-dom";
-import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 
 import fourhandshome from '../imagesByEoin/fourhandshome.png';
 
@@ -19,15 +11,8 @@ export default function HomeScreen(props) {
   const dispatch = useDispatch();
   const history = useHistory();
 
-  const productList = useSelector((state) => state.productList);
-  const { loading, error, products } = productList;
-
-  const userTopSellersList = useSelector((state) => state.userTopSellersList);
-  const {
-    loading: loadingSellers,
-    error: errorSellers,
-    users: sellers,
-  } = userTopSellersList;
+  // const productList = useSelector((state) => state.productList);
+  // const { loading, error, products } = productList;
 
   useEffect(() => {
     dispatch(listProducts({}));
@@ -48,7 +33,7 @@ export default function HomeScreen(props) {
     <div>
             <div className="homeImages">
         <div className="homepageContainer">
-          <img src={fourhandshome} />
+          <img src={fourhandshome} alt="4 Hands Food Studio's Food" />
         </div>
       </div>
 
