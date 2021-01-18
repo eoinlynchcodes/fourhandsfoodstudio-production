@@ -15,12 +15,18 @@ function TakeawayContainer(props) {
     axios
       .get("/api/products/")
       .then(response => {
+        console.log(response.data.products);
         setTakeawayProduct(response.data.products);
       })
       .catch((error) => {
         return error.message;
       });
   }, []);
+
+  useEffect(() => {
+
+  })
+
 
   const orderTakeaway = (id) => {
     history.push("/cart/" + id);
@@ -80,12 +86,12 @@ function TakeawayContainer(props) {
 
       {/* For Menu */}
       {takeawayProduct.map((takeaway) => {
-        if (takeaway.isTakeaway === true) {
+        if (takeaway.category === 'Takeaway') {
           return (
             <div>
               <div>
                 <p className="yellowText">
-                  <u>{takeaway.mainTitle}</u>
+                  <u>{takeaway.category}</u>
                 </p>
                 <p>{takeaway.mainItems}</p>
               </div>

@@ -78,10 +78,10 @@ function EditTakeaway(props) {
 
   // Get takeaways.
   useEffect(() => {
-    axios.get("/api/products/all")
+    axios.get("/api/products")
       .then((response) => {
-        console.log(response.data);
-        setTakeawayData(response.data);
+        console.log(response.data.products);
+        setTakeawayData(response.data.products);
       })
       .catch((error) => {
         return error.message;
@@ -100,7 +100,7 @@ function EditTakeaway(props) {
       <div>
         <h2 className="violet" >Menu currently online</h2>
         {takeawayData.map((takeaway) => {
-          if (takeaway.isTakeaway === true) {
+          if (takeaway.category === 'Takeaway') {
             return (
               <div className="menuTakeawaySection">
                 <div>
@@ -113,8 +113,10 @@ function EditTakeaway(props) {
                   </h4>
                   <p> {takeaway.mainITems}</p>
                   <p> {takeaway.courseText}</p>
+                  {takeaway.name ? <p>{takeaway.name}</p> : null}
                   {takeaway.price ? <p>Price: <u>€{takeaway.price}</u></p> : null}
                   {takeaway.countInStock ? <p>Quantity available: <u>{takeaway.countInStock}</u></p> : null}
+                  { takeaway.description ? <p> {takeaway.description} </p> : null }
                   
                   <p>{takeaway.mainItems}</p>
                 </div>
