@@ -22,6 +22,8 @@ export default function ShippingAddressScreen(props) {
   const [city, setCity] = useState(shippingAddress.city);
   const [postalCode, setPostalCode] = useState(shippingAddress.postalCode);
   const [country, setCountry] = useState(shippingAddress.country);
+  const [additional, setAdditional] = useState(shippingAddress.additional);
+
   const dispatch = useDispatch();
   const submitHandler = (e) => {
     e.preventDefault();
@@ -41,7 +43,7 @@ export default function ShippingAddressScreen(props) {
   return (
     <div>
       {/* <CheckoutSteps step1 step2></CheckoutSteps> */}
-      <div className="form">
+      <div>
         <form onSubmit={submitHandler}>
           <ul className="form-container">
             <li>
@@ -103,8 +105,20 @@ export default function ShippingAddressScreen(props) {
                 name="country"
                 id="country"
                 value={country}
-                placeholder="Note: We only deliver in Westmeath."
+                placeholder="County:"
                 onChange={(e) => setCountry(e.target.value)}
+              ></input>
+            </li>
+
+            <li>
+            <label htmlFor="country">Allergies / Takeaway Instructions / etc:</label>
+              <input
+                type="text"
+                name="country"
+                id="country"
+                value={country}
+                placeholder="Eg. Vegan Option for takeaway"
+                onChange={(e) => setAdditional(e.target.value)}
               ></input>
             </li>
 

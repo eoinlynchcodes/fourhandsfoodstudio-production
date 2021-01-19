@@ -61,9 +61,7 @@ export default function CartScreen(props) {
             cartItems.map((item) => (
               <li>
                 <div className="cart-image">
-                  {console.log(item)}
-                  {item.image === !null ? <img src={item.image} alt="product" /> : <img src={takeawaypicture} alt="product" /> }
-              
+                  <img src={item.image} alt="product image"/>
                 </div>
                 <div className="cart-name">
                   <div>

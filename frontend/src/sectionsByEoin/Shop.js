@@ -102,6 +102,7 @@ function Shop(props) {
         </div>
 
         <br />
+        <hr/>
         <br />
 
         <section id="stockists" className="stockists">
