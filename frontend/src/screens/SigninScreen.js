@@ -27,7 +27,7 @@ export default function SigninScreen(props) {
     }
   }, [props.history, redirect, userInfo]);
   return (
-    <div className="form">
+    <div>
       <form onSubmit={submitHandler}>
         <ul className="form-container">
         <li>

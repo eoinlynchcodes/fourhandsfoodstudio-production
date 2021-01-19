@@ -28,17 +28,17 @@ function Navigation(props) {
     <div>
       <header className="flexTheHeader">
         <div className="navmenu">
-          {userInfo ? (
+          {userInfo && userInfo.isAdmin ? (
             <Link className="spacebetween" to="/orderlist">
               Orders
             </Link>
           ) : null}
-           {userInfo ? (
+           {userInfo && userInfo.isAdmin ? (
             <Link className="spacebetween" to="/edittakeaway">
             Takeaway
           </Link>
           ) : null}
-          {userInfo ? (
+          {userInfo && userInfo.isAdmin ? (
             <Link className="spacebetween" to="/productlist">
             Products
           </Link>
@@ -95,6 +95,9 @@ function Navigation(props) {
           <Link to="/events">
             <h2>Events</h2>
           </Link>
+          <Link to="/contact">
+            <h2>Contact</h2>
+          </Link>
         </div>
       </header>
       {/* <hr/> */}
@@ -107,11 +110,12 @@ function Navigation(props) {
         <ul className="categories">
           <li>
             <Link to="/" onClick={closeMenu}>Home</Link>
-            <Link to="/about" onClick={closeMenu} >About</Link>
-            <Link to="/shop" onClick={closeMenu} >Shop</Link>
-            <Link to="/takeaway" onClick={closeMenu} >Takeaway</Link>
-            <Link to="/blog" onClick={closeMenu} >Blog</Link>
-            <Link to="/events" onClick={closeMenu} >Events</Link>
+            <Link to="/about" onClick={closeMenu}>About</Link>
+            <Link to="/shop" onClick={closeMenu}>Shop</Link>
+            <Link to="/takeaway" onClick={closeMenu}>Takeaway</Link>
+            <Link to="/blog" onClick={closeMenu}>Blog</Link>
+            <Link to="/events" onClick={closeMenu}>Events</Link>
+            <Link to="/contact" onClick={closeMenu}>Contact</Link>
           </li>
         </ul>
       </aside>

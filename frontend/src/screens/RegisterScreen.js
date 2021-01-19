@@ -33,14 +33,15 @@ export default function RegisterScreen(props) {
     }
   }, [props.history, redirect, userInfo]);
   return (
-    <div>
-      <form className="form" onSubmit={submitHandler}>
-        <div>
+    <div className="form" >
+      <form onSubmit={submitHandler}>
+      <ul className="form-container">
+        <li>
           <h1>Create Account</h1>
-        </div>
+        </li>
         {loading && <LoadingBox></LoadingBox>}
         {error && <MessageBox variant="danger">{error}</MessageBox>}
-        <div>
+        <li>
           <label htmlFor="name">Name</label>
           <input
             type="text"
@@ -49,8 +50,8 @@ export default function RegisterScreen(props) {
             required
             onChange={(e) => setName(e.target.value)}
           ></input>
-        </div>
-        <div>
+        </li>
+        <li>
           <label htmlFor="email">Email address</label>
           <input
             type="email"
@@ -59,8 +60,8 @@ export default function RegisterScreen(props) {
             required
             onChange={(e) => setEmail(e.target.value)}
           ></input>
-        </div>
-        <div>
+        </li>
+        <li>
           <label htmlFor="password">Password</label>
           <input
             type="password"
@@ -69,8 +70,8 @@ export default function RegisterScreen(props) {
             required
             onChange={(e) => setPassword(e.target.value)}
           ></input>
-        </div>
-        <div>
+        </li>
+        <li>
           <label htmlFor="confirmPassword">Confirm Password</label>
           <input
             type="password"
@@ -79,20 +80,21 @@ export default function RegisterScreen(props) {
             required
             onChange={(e) => setConfirmPassword(e.target.value)}
           ></input>
-        </div>
-        <div>
+        </li>
+        <li>
           <label />
           <button className="primary" type="submit">
             Register
           </button>
-        </div>
-        <div>
+        </li>
+        <li>
           <label />
           <div>
             Already have an account?{' '}
-            <Link to={`/signin?redirect=${redirect}`}>Sign-In</Link>
+            <Link to={`/signin?redirect=${redirect}`}><button>Sign-In</button></Link>
           </div>
-        </div>
+        </li>
+        </ul>
       </form>
     </div>
   );

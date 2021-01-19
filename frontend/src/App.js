@@ -30,6 +30,7 @@ import Blog from './sectionsByEoin/Blog';
 import Events from './sectionsByEoin/Events';
 import Takeaway from './sectionsByEoin/Takeaway';
 import EditTakeaway from './sectionsByEoin/EditTakeaway';
+import ContactUs from './screens/ContactUs.js';
 
 function App() { 
 
@@ -51,6 +52,7 @@ function App() {
           <Route path="/events" component={Events} ></Route>
           <Route path="/about" component={About} ></Route>
           <Route path="/shop" component={Shop}></Route>
+          <Route path="/contact" component={ContactUs} ></Route>
           <Route path="/signin" component={SigninScreen}></Route>
           <Route path="/register" component={RegisterScreen}></Route>
           <Route path="/edittakeaway" component={EditTakeaway} ></Route>

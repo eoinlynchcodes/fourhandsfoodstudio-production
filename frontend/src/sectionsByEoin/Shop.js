@@ -43,9 +43,9 @@ function Shop(props) {
           ) : (
             <div id="products" className="">
               {products.map((product) => (
-                <div key={product._id}>
+                <div className="product-padding-section" key={product._id}>
                   {product ? (
-                    <div className="product-padding-section">
+                    <div>
                       <Link to={"/product/" + product._id}>
                         <img
                           className="product-image"

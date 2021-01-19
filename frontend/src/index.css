@@ -568,6 +568,7 @@ a > .rating > span:last-child {
   flex-direction: column;
   width: 32rem;
   padding: 2rem;
+  margin: 2rem auto;
   border: 0.1rem #c0c0c0 solid;
   border-radius: 0.5rem;
   list-style-type: none;
@@ -873,10 +874,15 @@ img.small {
   width: 2rem;
 }
 
+#products{
+  display: flex;
+  flex-wrap: wrap;
+}
 
 .product-padding-section{
   border: 1px solid black;
   margin: 2rem auto;
+  width: 20rem;
 }
 
 .buttonDivHomepageProduct{
@@ -919,3 +925,7 @@ img.small {
   margin: 2rem auto;
 }
 
+.flexTakeawayDetails{
+  display: flex;
+  justify-content: space-evenly;
+}

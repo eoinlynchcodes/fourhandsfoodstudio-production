@@ -30,6 +30,9 @@ function Footer() {
         <a href="/events"> 
           <p>Events</p>
         </a>
+        <a href="/contact">
+          <p>Contact</p>
+        </a>
       </nav>
 
       <hr/>

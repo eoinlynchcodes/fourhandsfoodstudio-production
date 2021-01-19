@@ -9,7 +9,7 @@ export default class MyForm extends React.Component {
     super(props);
     this.submitForm = this.submitForm.bind(this);
     this.state = {
-      status: ""
+      status: "",
     };
   }
 
@@ -23,20 +23,44 @@ export default class MyForm extends React.Component {
         className="contactForm"
       >
         {/* <!-- add your custom form HTML here --> */}
-        <label>Name:</label>
-        <input type="text" name="name"/><br/>
+        <ul className="form-container">
+          <li>
+            <div>
+              <h2 className="violet">Contact Us</h2>
+            </div>
+            <p>
+              Feel free to get in touch with any questions, about orders, to
+              give feedback or anything else.{" "}
+            </p>
+            <hr/>
+          </li>
+          <label>Name:</label>
+          <input type="text" name="name" />
+          <br />
 
-        <label>Email:</label>
-        <input type="email" name="email" /><br/>
+          <label>Email:</label>
+          <input type="email" name="email" />
+          <br />
 
-        <label>Phone Number:</label>
-        <input type="text" name="number"/><br/>
+          <label>Phone Number:</label>
+          <input type="text" name="number" />
+          <br />
 
-        <label>Message:</label>
-        <textarea type="textarea" name="message" rows="8" /><br/>
+          <label>Message:</label>
+          <textarea type="textarea" name="message" rows="8" />
+          <br />
 
-        {status === "SUCCESS" ? <p>Thanks, we will respond ASAP!</p> : <input type="submit" className="contact-submit-button" value="Send Message" />}
-        {status === "ERROR" && <p>Ooops! There was an error.</p>}
+          {status === "SUCCESS" ? (
+            <p>Thanks you your message. We will respond promptly</p>
+          ) : (
+            <input
+              type="submit"
+              className="button primary"
+              value="Send Message"
+            />
+          )}
+          {status === "ERROR" && <p> There was an error. You can reach us on 4handsf@gmail.com</p>}
+        </ul>
       </form>
     );
   }
