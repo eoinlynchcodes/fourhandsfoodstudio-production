@@ -44,6 +44,7 @@ orderRouter.post(
         shippingPrice: req.body.shippingPrice,
         totalPrice: req.body.totalPrice,
         user: req.user._id,
+        email: req.user.email,
       });
       const createdOrder = await order.save();
       res

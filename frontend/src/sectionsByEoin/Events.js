@@ -8,10 +8,10 @@ function Events() {
     <section className="aboutContainer">
       <div className="vl"></div>
       <div>
-        <div className="coloredBox violet">
+        {/* <div className="coloredBox violet">
           <h2>Events</h2>
         </div>
-        <br />
+        <br /> */}
         <div>
           <h2 className="covid coloredBox">COVID statement</h2>
           <p className="aboutMainText">

@@ -30,9 +30,9 @@ function Shop(props) {
   return (
     <section className="aboutContainer">
       <div className="vl"></div>
-        <div className="coloredBox violet">
+        {/* <div className="coloredBox violet">
           <h2>Products</h2>
-        </div>
+        </div> */}
         <br />
         <div className="">
           {/* <h1 id="products">Products</h1> */}

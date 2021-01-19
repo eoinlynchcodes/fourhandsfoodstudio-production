@@ -10,9 +10,9 @@ function Takeaway() {
     <section className="aboutContainer">
       <div className="vl"></div>
       <div>
-        <div className="coloredBox green">
+        {/* <div className="coloredBox green">
           <h2>Takeaway</h2>
-        </div>
+        </div> */}
         <br />
 
         <div className="homeImages">

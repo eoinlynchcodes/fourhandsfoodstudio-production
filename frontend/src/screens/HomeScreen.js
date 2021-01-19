@@ -47,20 +47,19 @@ export default function HomeScreen(props) {
                 <h3>The Fermented Goods</h3>
               </div>
               <p className="paraforalignment">
-                We currently offer a small range of fermented vegetables and
-                drinks well known as sauerkraut, kimchi and kombucha aswell as
-                fermented vegetable juices.
+                We currently offer a range of fermented vegetables and
+                drinks such as sauerkraut, kimchi and kombucha aswell as
+                fermented vegetable juices, raw apple vinegar, and sprouted whole foods.
                 <br />
-                We focus on a starting point: the raw produce.
-                <br /><br />
+                We focus on a starting point: the raw produce.<br/><br/>
                 The ingredients we use have to be alive, chemical free and
                 ethically produced.
                 <br />              
-                We sell in <a className="linkToNormalise" href="#retailers"><u> shops</u></a>, through <a
+                We sell in <a className="linkToNormalise" href="/shop/#stockists"><u> shops</u></a>, through <a
                   className="linkToNormalise"
-                  href="https://www.neighbourfood.ie/markets/mullingar/collection/2373"
+                  href="https://www.neighbourfood.ie/markets/" target="_blank"
                 >
-                  <u>Neighbourfood Mullingar</u>
+                  <u>Neighbourfood.ie</u>
                 </a> and our  {" "}  
                  <a className="linkToNormalise" href="/shop"> 
                     <u>Online Store. </u>

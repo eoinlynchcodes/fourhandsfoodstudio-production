@@ -40,7 +40,7 @@ function Navigation(props) {
           ) : null}
           {userInfo && userInfo.isAdmin ? (
             <Link className="spacebetween" to="/productlist">
-            Products
+            Shop
           </Link>
           ) : null}
           {userInfo ? (
@@ -84,13 +84,13 @@ function Navigation(props) {
             <h2>About</h2>
           </Link>
           <Link to="/shop">
-            <h2>Products</h2>
+            <h2>Shop</h2>
           </Link>
           <Link to="/takeaway">
             <h2>Takeaway</h2>
           </Link>
-          <Link to="/blog">
-            <h2>Blog</h2>
+          <Link to="/stockists">
+            <h2>Stockists</h2>
           </Link>
           <Link to="/events">
             <h2>Events</h2>
@@ -113,8 +113,8 @@ function Navigation(props) {
             <Link to="/about" onClick={closeMenu}>About</Link>
             <Link to="/shop" onClick={closeMenu}>Shop</Link>
             <Link to="/takeaway" onClick={closeMenu}>Takeaway</Link>
-            <Link to="/blog" onClick={closeMenu}>Blog</Link>
             <Link to="/events" onClick={closeMenu}>Events</Link>
+            <Link to="/stockists" onClick={closeMenu} >Stockists</Link>
             <Link to="/contact" onClick={closeMenu}>Contact</Link>
           </li>
         </ul>

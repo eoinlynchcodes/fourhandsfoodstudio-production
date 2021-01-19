@@ -8,13 +8,13 @@ function About() {
     <section className="aboutContainer">
       <div className="vl"></div>
       <div>
-        <div className="coloredBox violet">
+        {/* <div className="coloredBox violet">
           <h2>About</h2>
         </div>
-        <br/>
-        <div className="abouttopImage">
+        <br/> */}
+        {/* <div className="abouttopImage">
           <img src={roseintro} />
-        </div>
+        </div> */}
 
         <div className="aboutMainText">
           <p>

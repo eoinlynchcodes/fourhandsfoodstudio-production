@@ -4,7 +4,7 @@ function Blog(){
 
     return (
         <div>
-        <section className="">
+        {/* <section className="">
             <div className="coloredBox blue">
               <h2>Blog</h2>
             </div>
@@ -21,7 +21,7 @@ function Blog(){
                 data-offset="-100"
               ></div>
             </div>
-          </section>
+          </section> */}
         </div>
     );
 }

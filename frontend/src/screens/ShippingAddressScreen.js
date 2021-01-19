@@ -34,6 +34,7 @@ export default function ShippingAddressScreen(props) {
         city,
         postalCode,
         country,
+        additional
       })
     );
     dispatch(savePaymentMethod(paymentMethod));
@@ -84,6 +85,18 @@ export default function ShippingAddressScreen(props) {
               ></input>
             </li>
             <li>
+              <label htmlFor="country">County:</label>
+              <input
+                type="text"
+                name="country"
+                id="country"
+                value={country}
+                placeholder="County:"
+                onChange={(e) => setCountry(e.target.value)}
+              ></input>
+            </li>
+
+            <li>
               <label htmlFor="postalCode">
                 Eircode:{" "}
                 <a className="black-text" href="https://finder.eircode.ie/#/">
@@ -98,28 +111,20 @@ export default function ShippingAddressScreen(props) {
                 onChange={(e) => setPostalCode(e.target.value)}
               ></input>
             </li>
-            <li>
-              <label htmlFor="country">County:</label>
-              <input
-                type="text"
-                name="country"
-                id="country"
-                value={country}
-                placeholder="County:"
-                onChange={(e) => setCountry(e.target.value)}
-              ></input>
-            </li>
 
             <li>
-            <label htmlFor="country">Allergies / Takeaway Instructions / etc:</label>
-              <input
+              <label htmlFor="additional">
+                Optional Notes for Takeaway Orders:
+              </label>
+              <textarea
                 type="text"
-                name="country"
-                id="country"
-                value={country}
-                placeholder="Eg. Vegan Option for takeaway"
+                name="additional"
+                id="additional"
+                rows="8"
+                value={additional}
+                placeholder="Eg. Vegan Option for takeaway please."
                 onChange={(e) => setAdditional(e.target.value)}
-              ></input>
+              ></textarea>
             </li>
 
             <li>

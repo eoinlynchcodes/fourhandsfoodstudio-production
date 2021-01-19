@@ -31,11 +31,12 @@ import Events from './sectionsByEoin/Events';
 import Takeaway from './sectionsByEoin/Takeaway';
 import EditTakeaway from './sectionsByEoin/EditTakeaway';
 import ContactUs from './screens/ContactUs.js';
+import Stockists from './screens/Stockists';
 
 function App() { 
 
   return (
-    <BrowserRouter>
+    <BrowserRouter >
       <div className="">
         <Navigation/>
         <main>
@@ -54,6 +55,7 @@ function App() {
           <Route path="/shop" component={Shop}></Route>
           <Route path="/contact" component={ContactUs} ></Route>
           <Route path="/signin" component={SigninScreen}></Route>
+          <Route path="/stockists" component={Stockists}> </Route>
           <Route path="/register" component={RegisterScreen}></Route>
           <Route path="/edittakeaway" component={EditTakeaway} ></Route>
           <Route path="/shipping" component={ShippingAddressScreen}></Route>

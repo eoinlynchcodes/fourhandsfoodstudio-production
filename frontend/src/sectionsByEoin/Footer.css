@@ -17,7 +17,7 @@ footer a{
 }
 
 .newsLetterFooter{
-    padding: 5rem 0rem;
+    padding: 1rem 0rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -40,8 +40,8 @@ nav{
     justify-content: center;
     border: 5px solid white;
     width: 50%;
-    padding: 2rem;
-    margin: 5rem auto;
+    padding: 1rem;
+    margin: 2rem auto;
 }
 
 .subscribeButton{
@@ -119,7 +119,7 @@ nav{
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 2em;
+        padding: 1em;
     }
 }
 
@@ -135,7 +135,7 @@ nav{
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 2em;
+    padding: 1em;
 }
 
 .blackenThisEoinLynch{
