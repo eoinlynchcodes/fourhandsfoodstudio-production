@@ -10,10 +10,10 @@ function TakeawayContainer(props) {
   const history = useHistory();
 
   const [takeawayProduct, setTakeawayProduct] = useState([]);
+  const [detailsOnline, setDetailsOnline] = useState([]);
 
   useEffect(() => {
-    axios
-      .get("/api/products/")
+    axios.get("/api/products/")
       .then(response => {
         console.log(response.data.products);
         setTakeawayProduct(response.data.products);
@@ -24,9 +24,14 @@ function TakeawayContainer(props) {
   }, []);
 
   useEffect(() => {
-
-  })
-
+    axios.get("/api/takeaway/")
+      .then((response) => {
+        setDetailsOnline(response.data);
+      })
+      .catch((error) => {
+        return error.message;
+      });
+  }, []);
 
   const orderTakeaway = (id) => {
     history.push("/cart/" + id);
@@ -38,15 +43,15 @@ function TakeawayContainer(props) {
         <h2>This week's takeaway menu:</h2>
         <p>
           <u>Collection Date:</u>
-          <br /> {takeawayDetails.collectionDate}
+          <br /> {detailsOnline.collectionDate}
         </p>
 
         <p>
           <u>Collection Point:</u>
-          <br /> {takeawayDetails.pickupPoints}
+          <br /> {detailsOnline.pickupPoints}
         </p>
 
-        <p>{takeawayDetails.otherinfo}</p>
+        <p>** {detailsOnline.otherinfo}</p>
       </div>
 
       {/* For Details */}
@@ -93,7 +98,8 @@ function TakeawayContainer(props) {
                 <p className="yellowText">
                   <u>{takeaway.category}</u>
                 </p>
-                <p>{takeaway.mainItems}</p>
+                <p>{takeaway.name}</p>
+                <p>{takeaway.description}</p>
               </div>
               <div>
                 <p>

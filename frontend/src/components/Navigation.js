@@ -106,12 +106,12 @@ function Navigation(props) {
         </button>
         <ul className="categories">
           <li>
-            <Link to="/">Home</Link>
-            <Link to="/about">About</Link>
-            <Link to="/shop">Shop</Link>
-            <Link to="/takeaway">Takeaway</Link>
-            <Link to="/blog">Blog</Link>
-            <Link to="/events">Events</Link>
+            <Link to="/" onClick={closeMenu}>Home</Link>
+            <Link to="/about" onClick={closeMenu} >About</Link>
+            <Link to="/shop" onClick={closeMenu} >Shop</Link>
+            <Link to="/takeaway" onClick={closeMenu} >Takeaway</Link>
+            <Link to="/blog" onClick={closeMenu} >Blog</Link>
+            <Link to="/events" onClick={closeMenu} >Events</Link>
           </li>
         </ul>
       </aside>

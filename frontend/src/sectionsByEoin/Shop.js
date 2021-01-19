@@ -30,7 +30,6 @@ function Shop(props) {
   return (
     <section className="aboutContainer">
       <div className="vl"></div>
-      <div className="">
         <div className="coloredBox violet">
           <h2>Products</h2>
         </div>
@@ -155,7 +154,6 @@ function Shop(props) {
           <br />
           <br />
         </section>
-      </div>
       <div className="vl"></div>
     </section>
   );
